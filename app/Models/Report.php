@@ -14,13 +14,11 @@ class Report extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function category(){
-        return $this->belongsTo(Category::class,'item_id','id')->withDefault();
+    public function reportable(){
+        return $this->morphTo();
     }
 
-    public function product(){
-        return $this->belongsTo(Product::class,'item_id','id')->withDefault();
-    }
+    
 }
 
 

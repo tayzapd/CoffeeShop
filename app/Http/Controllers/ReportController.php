@@ -32,6 +32,6 @@ class ReportController extends Controller
 
     public function Reports(Request $request)
     {
-       return Report::with(['user:id,name','category','product'])->get();
+       return Report::with(['user:id,name','reportable'])->get();
     }
 }

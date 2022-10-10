@@ -14,6 +14,7 @@ class Category extends Model
 
     public function reprots()
     {
-       return $this->hasMany(Report::class,'item_id');
+       return $this->morphOne(Report::class,'reportable');
     }
+    
 }
