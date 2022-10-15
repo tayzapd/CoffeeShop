@@ -1,5 +1,5 @@
 <template>
-    <v-card >
+    <v-card class="col-12">
         <v-card-media src="src" height="200px">
         </v-card-media>
         <v-card-title primary-title>

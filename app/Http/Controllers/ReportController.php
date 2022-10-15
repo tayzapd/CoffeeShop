@@ -30,8 +30,18 @@ class ReportController extends Controller
 
     }
 
-    public function Reports(Request $request)
+    public function Reports()
     {
-       return Report::with(['user:id,name','reportable'])->get();
+       return Report::with(['user:id,name','reportable.user:id,name'])->get();
+    }
+
+    public function Remove(Request $request)
+    {
+        $db = Report::find($request->report_id);
+        if($db->delete()){
+            return json_encode(true);
+        }else {
+            return json_encode(false);
+        }
     }
 }

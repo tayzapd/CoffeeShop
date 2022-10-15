@@ -6,6 +6,9 @@ import '@mdi/font/css/materialdesignicons.css'
 import { createVuetify } from 'vuetify';
 import router from './router';
 
+// Using ScrollReveal's default configuration
+
+
 const vuetify = createVuetify();
 const app = createApp({});
 

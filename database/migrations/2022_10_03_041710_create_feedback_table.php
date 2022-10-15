@@ -16,10 +16,9 @@ return new class extends Migration
         Schema::create('feedback', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
-            $table->string('email');
             $table->text('content');
-            $table->integer('item_id');
-            $table->string('type');
+            $table->integer('feedbackable_id');
+            $table->string('feedbackable_type');
             $table->timestamps();
         });
     }

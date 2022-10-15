@@ -16,5 +16,8 @@ class Category extends Model
     {
        return $this->morphOne(Report::class,'reportable');
     }
-    
+    public function feedbacks()
+    {
+       return $this->morphOne(Feedback::class,'feedbackable');
+    }
 }

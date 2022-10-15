@@ -57,11 +57,21 @@ class User extends Authenticatable
         return $this->hasMany(Product::class);
     }
 
-    public function reports()
+    public function reprots()
     {
-        # code...
-        return $this->hasMany(Report::class);
+       return $this->morphOne(Report::class,'reportable');
     }
+
+    public function feedbacks()
+    {
+       return $this->morphOne(Feedback::class,'feedbackable');
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];

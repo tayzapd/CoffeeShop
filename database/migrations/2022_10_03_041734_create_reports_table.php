@@ -16,10 +16,9 @@ return new class extends Migration
         Schema::create('reports', function (Blueprint $table) {
             $table->id();
             $table->integer("user_id");
-            $table->integer("item_id");
-            $table->string('email');
             $table->text("content");
-            $table->string("type");
+            $table->integer("reportable_id");
+            $table->string("reportable_type");
             $table->timestamps();
         });
     }

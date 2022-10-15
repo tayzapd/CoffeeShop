@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div >
         <v-card
             v-for="item in products " :key="item.id"
             class="mx-auto my-4"
@@ -11,7 +11,7 @@
 
             <v-img
             :src="`/`+item.image"
-            height="200px"
+            height="300px"
             cover
             >
             <v-layout full-height>
@@ -63,7 +63,8 @@
 
               </template>
             </v-app-bar>
-          </v-layout></v-img>
+          </v-layout>
+          </v-img>
          
             <v-card-title>
 

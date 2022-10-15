@@ -1,6 +1,11 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Main from './components/Main.vue';
+
+
 import About from './components/Layouts/About.vue';
+import Home from './components/Layouts/Home.vue';
+import AllProducts from './components/Layouts/AllProduct.vue';
+import MyOrders from './components/Layouts/Orders.vue';
+
 // import Welcome from './components/Layouts/Welcome.vue';
 import Login from './components/Auth/Login.vue';
 import Register from './components/Auth/Register.vue';
@@ -17,20 +22,21 @@ import Customers from './components/Manager/Role/Customer.vue';
 import Categories from './components/Manager/Category/Categories.vue';
 import Products from './components/Manager/Product/Products.vue';
 
-// Report And Feedbacks 
+// Reports,Orders And Feedbacks 
 import Report from './components/Manager/Report/Reports.vue';
+import Feedbacks from './components/Manager/Feedback/Feedbacks.vue';
+import Orders from './components/Manager/Order/Orders.vue';
+import { template } from "lodash";
 
-const Welcome = {
-    template: "Hello"
-}
+
 
 // routes 
 const routes = 
 [
     {
         path:`/`,
-        name:"Welcome",
-        component:Welcome
+        name:"Home",
+        component:Home
     },
 
     {
@@ -38,7 +44,16 @@ const routes =
         name:"About",
         component:About
     },
-
+    {
+        path:`/products`,
+        name:"Products",
+        component:AllProducts
+    },
+    {
+        path:`/orders`,
+        name:"Orders",
+        component:MyOrders
+    },
     {
         path:`/login`,
         name:"Login",
@@ -59,7 +74,7 @@ const routes =
             {
                 path:'/',
                 name:"Manager Dashboard",
-                component:Welcome
+                template:"he"
             },
             {
                 path: 'role/',
@@ -96,6 +111,16 @@ const routes =
                 path: 'reports',
                 name:"Reports ",
                 component: Report
+            },
+            {
+                path: 'feedbacks',
+                name:"Feedbacks ",
+                component: Feedbacks
+            },
+            {
+                path: 'orders',
+                name:"Orders ",
+                component: Orders
             },
         ]
           ,

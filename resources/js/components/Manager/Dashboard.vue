@@ -1,6 +1,6 @@
 <template>
     <div class="d-flex flex-row col-12 my-5 ">
-        <v-card class="col-md-4  mx-auto h-100"  >
+        <v-card class="col-md-4  mx-auto h-100 col-sm-12"  >
             <v-sheet
                 rounded
                 class="mx-auto px-3 py-3 "
@@ -27,14 +27,17 @@
             </v-expansion-panels>
         </v-card>   
 
-        <v-card class="col-md-8  col-xs-12 mx-5" >
+        <v-card class="col-md-8  col-xs-12 mx-5 overflow-auto" height="90vh"  >
             <v-card-title primary-title>
                 {{ $route.name }}
             </v-card-title>
 
             <v-card-text>
-            <router-view :name="$router.path" :key="$router.path" ></router-view>
-                
+            <router-view v-slot="{ Component, route }" height="100vh"  >
+                   <v-fade-transition>
+                        <component :is="Component" :key="route.path" />
+                   </v-fade-transition>
+            </router-view>
             </v-card-text>
         </v-card>
     </div>
